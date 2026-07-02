@@ -1,16 +1,15 @@
-                
 from flask import Flask, jsonify
-from scraper import get_cached_data, fetch_and_>
+from flask_cors import CORS
+from scraper import get_cached_matches
 
 app = Flask(__name__)
+CORS(app)  # Autorise les requêtes depuis le mobile
 
 @app.route('/api/matches', methods=['GET'])
-def get_matches():
-    # Force la mise à jour à chaque appel de l'>
-    fetch_and_parse()
-    return jsonify(get_cached_data())
+def matches():
+    """Endpoint renvoyant tous les matchs football avec les cotes 1xBet."""
+    data = get_cached_matches()
+    return jsonify(data)
 
 if __name__ == '__main__':
-    # Écoute sur l'adresse 0.0.0.0 pour permett>
-    app.run(host='0.0.0.0', port=5000, debug=Fa>
-
+    app.run(host='0.0.0.0', port=5000, debug=True)

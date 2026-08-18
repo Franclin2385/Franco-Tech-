@@ -1,0 +1,14 @@
+# Image officielle Playwright Python contenant toutes les dépendances Chromium
+FROM mcr.microsoft.com/playwright/python:v1.48.0-jammy
+
+WORKDIR /app
+
+# Installation des dépendances Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copie du code source
+COPY . .
+
+# Commande de lancement (remplacez par le nom exact de votre script)
+CMD ["python", "votre_script.py"]

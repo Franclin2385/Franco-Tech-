@@ -1,5 +1,5 @@
 """
-Exemple d'intégration playwright-stealth pour FrancoBot backend_bot/
+Exemple d'intégration playwright-stealth pour FrancoBot backend_bot/ 
 --------------------------------------------------------------------
 Objectif : maintenir une session Playwright longue durée sur 1xBet,
 intercepter les cotes en temps réel via le réseau (pas de reload de page),
